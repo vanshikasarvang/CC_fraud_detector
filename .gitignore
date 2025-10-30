@@ -1,0 +1,11 @@
+node_modules
+Dependency directories
+
+node_modules/
+
+Next.js build and cache
+
+.next/
+/out/
+.env
+.env.local
