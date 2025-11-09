@@ -11,9 +11,10 @@
     "strict": false,
     "noEmit": true,
     "incremental": true,
-    "module": "esnext",
+    "module": "esnext", // Keep this
     "esModuleInterop": true,
-    "moduleResolution": "node",
+    // 👇 CRITICAL FIX: Change moduleResolution to "bundler"
+    "moduleResolution": "bundler", 
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",

@@ -1,3 +1,4 @@
+// fileName: dashboard.tsx
 "use client"
 import SummaryCards from "./summary-cards"
 import TransactionTrends from "./transaction-trends"
@@ -9,8 +10,7 @@ import RightSidebar from "./right-sidebar"
 
 export default function Dashboard() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
-      {/* Header */}
+    <div className="min-h-screen"> 
       <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur-sm sticky top-0 z-50">
         <div className="px-8 py-6">
           <h1 className="text-3xl font-bold text-balance">Fraud Detection Dashboard</h1>
@@ -18,36 +18,28 @@ export default function Dashboard() {
         </div>
       </header>
 
-      {/* Main Content */}
       <div className="flex">
-        {/* Left Content Area */}
         <div className="flex-1 p-8">
-          {/* Summary Cards */}
           <SummaryCards />
 
-          {/* Charts Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
             <TransactionTrends />
             <TransactionDistribution />
           </div>
 
-          {/* Model Performance */}
           <div className="mt-8">
             <ModelPerformance />
           </div>
 
-          {/* Fraud Alert */}
           <div className="mt-8">
             <FraudAlert />
           </div>
 
-          {/* Recent Transactions */}
           <div className="mt-8">
             <RecentTransactions />
           </div>
         </div>
 
-        {/* Right Sidebar */}
         <RightSidebar />
       </div>
     </div>
