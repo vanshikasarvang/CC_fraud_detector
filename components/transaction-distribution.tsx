@@ -2,14 +2,11 @@
 
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts"
 
-const data = [
-  { name: "Legitimate", value: 96.8 },
-  { name: "Fraudulent", value: 3.2 },
-]
+type DistItem = { name: string; value: number }
 
 const COLORS = ["#06b6d4", "#ef4444"]
 
-export default function TransactionDistribution() {
+export default function TransactionDistribution({ data }: { data: DistItem[] }) {
   return (
     <div className="bg-slate-900/50 border border-slate-700/50 rounded-lg p-6 backdrop-blur-sm">
       <h2 className="text-lg font-semibold mb-6 text-white">Transaction Distribution</h2>

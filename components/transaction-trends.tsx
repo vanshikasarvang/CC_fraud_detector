@@ -2,17 +2,9 @@
 
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts"
 
-const data = [
-  { month: "Jan", legitimate: 2800, fraudulent: 120 },
-  { month: "Feb", legitimate: 3200, fraudulent: 145 },
-  { month: "Mar", legitimate: 2900, fraudulent: 98 },
-  { month: "Apr", legitimate: 3500, fraudulent: 167 },
-  { month: "May", legitimate: 3100, fraudulent: 112 },
-  { month: "Jun", legitimate: 3800, fraudulent: 189 },
-  { month: "Jul", legitimate: 4200, fraudulent: 201 },
-]
+type TrendItem = { month: string; legitimate: number; fraudulent: number }
 
-export default function TransactionTrends() {
+export default function TransactionTrends({ data }: { data: TrendItem[] }) {
   return (
     <div className="bg-slate-900/50 border border-slate-700/50 rounded-lg p-6 backdrop-blur-sm">
       <h2 className="text-lg font-semibold mb-6 text-white">Transaction Trends (Jan - Jul)</h2>

@@ -2,74 +2,16 @@
 
 import { AlertCircle, CheckCircle } from "lucide-react"
 
-const transactions = [
-  {
-    id: "TXN-8924",
-    amount: "$1,250.00",
-    time: "2 min ago",
-    status: "Fraud",
-    probability: 98,
-    isFraud: true,
-  },
-  {
-    id: "TXN-8923",
-    amount: "$45.99",
-    time: "5 min ago",
-    status: "Legitimate",
-    probability: 99,
-    isFraud: false,
-  },
-  {
-    id: "TXN-8922",
-    amount: "$2,100.00",
-    time: "12 min ago",
-    status: "Fraud",
-    probability: 94,
-    isFraud: true,
-  },
-  {
-    id: "TXN-8921",
-    amount: "$89.50",
-    time: "18 min ago",
-    status: "Legitimate",
-    probability: 97,
-    isFraud: false,
-  },
-  {
-    id: "TXN-8920",
-    amount: "$567.00",
-    time: "25 min ago",
-    status: "Legitimate",
-    probability: 96,
-    isFraud: false,
-  },
-  {
-    id: "TXN-8919",
-    amount: "$3,450.00",
-    time: "32 min ago",
-    status: "Fraud",
-    probability: 91,
-    isFraud: true,
-  },
-  {
-    id: "TXN-8918",
-    amount: "$123.45",
-    time: "40 min ago",
-    status: "Legitimate",
-    probability: 98,
-    isFraud: false,
-  },
-  {
-    id: "TXN-8917",
-    amount: "$890.00",
-    time: "48 min ago",
-    status: "Legitimate",
-    probability: 95,
-    isFraud: false,
-  },
-]
+type Tx = {
+  id: string
+  amount: string
+  time: string
+  status: string
+  probability: number
+  isFraud: boolean
+}
 
-export default function RecentTransactions() {
+export default function RecentTransactions({ transactions }: { transactions: Tx[] }) {
   return (
     <div className="bg-slate-900/50 border border-slate-700/50 rounded-lg p-6 backdrop-blur-sm overflow-hidden">
       <h2 className="text-lg font-semibold mb-6 text-white">Recent Transactions</h2>
